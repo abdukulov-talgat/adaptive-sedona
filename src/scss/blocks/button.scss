@@ -1,0 +1,39 @@
+.button {
+  display: inline-block;
+  padding: 10px 20px;
+  border: 0;
+  background-color: $basic-spring;
+  color: #ffffff;
+  cursor: pointer;
+  font-family: "Oswald", "Arial", sans-serif;
+  font-size: 16px;
+  line-height: 20px;
+  text-align: center;
+  text-decoration: none;
+  text-transform: uppercase;
+
+  &:hover,
+  &:focus {
+    background-color: $status-success;
+  }
+
+  &:active {
+    background-color: $status-success;
+    color: rgba(#ffffff, 0.3);
+  }
+}
+
+.button--secondary {
+  background-color: $basic-light;
+  color: $special-dark;
+
+  &:hover,
+  &:focus {
+    background-color: $basic-neutral;
+  }
+
+  &:active {
+    background-color: $basic-neutral;
+    color: rgba($special-dark, 0.3);
+  }
+}

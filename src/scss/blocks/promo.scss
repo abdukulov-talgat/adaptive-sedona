@@ -1,0 +1,194 @@
+@media (min-width: $desktop-width) {
+  .promo {
+    min-height: 694px;
+    padding: 141px 0 0;
+    background-image: url("@img/promo/promo-bg-desktop.jpg");
+    background-position: calc(50% + 522px) 0;
+    background-repeat: no-repeat;
+    background-size: 1044px 696px;
+
+    @media (min-resolution: 2dppx) {
+      background-image: url("@img/promo/promo-bg-desktop@2x.jpg");
+    }
+  }
+}
+
+.promo__container {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+@media (min-width: $tablet-width) {
+  .promo__container {
+    min-height: 848.12px;
+    justify-content: flex-start;
+    padding: 0 15.23%;
+    background-image: url("@img/promo/index-can-tablet.png");
+    background-position: center bottom 0;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-resolution: 2dppx) {
+    .promo__container {
+      background-image: url("@img/promo/index-can-tablet@2x.png");
+      background-size: 709px 609px;
+    }
+  }
+}
+
+@media (min-width: 1100px) {
+  .promo__container {
+    min-height: 609px;
+    background-position: right 15.23% bottom 0;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .promo__container {
+    max-width: $desktop-width;
+    min-height: 499px;
+    padding: 82px 190px 0;
+    margin: 0 auto;
+    background: none;
+    background-image: url("@img/promo/index-can-desktop.png");
+    background-position: 558px 0;
+    background-repeat: no-repeat;
+  }
+
+  @media (min-resolution: 2dppx) {
+    .promo__container {
+      background-image: url("@img/promo/index-can-desktop@2x.png");
+      background-size: 552px 499px;
+    }
+  }
+}
+
+.promo__header {
+  position: relative;
+  padding: 27px 6.25% 164px;
+  margin-bottom: 138px;
+  background-image:
+    url("@img/promo/promo-bg-mobile.jpg"),
+    linear-gradient(to right, #64a83d, #62a63a);
+  background-position: 50% 0;
+  background-repeat: no-repeat;
+  background-size: contain;
+
+  @media (min-resolution: 2dppx) {
+    background-image:
+      url("@img/promo/promo-bg-mobile@2x.jpg"),
+      linear-gradient(to right, #64a83d, #62a63a);
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .promo__header {
+    padding: 38px 0 49px;
+    margin-bottom: 0;
+    background-image: none;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .promo__header {
+    padding: 0 0 52px;
+  }
+}
+
+.promo__header::after {
+  position: absolute;
+  bottom: -135px;
+  left: 50%;
+  width: 280px;
+  height: 270px;
+  background-image: url("@img/promo/index-can-mobile.png");
+  background-repeat: no-repeat;
+  content: "";
+  transform: translateX(-50%);
+
+  @media (min-resolution: 2dppx) {
+    background-image: url("@img/promo/index-can-mobile@2x.png");
+    background-size: 100% auto;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .promo__header::after {
+    content: none;
+  }
+}
+
+.promo__title {
+  margin: 0;
+  margin-bottom: 25px;
+  color: #ffffff;
+  font-family: $font-special;
+  font-size: 36px;
+  font-weight: 400;
+  line-height: 36px;
+  text-align: center;
+}
+
+@media (min-width: $tablet-width) {
+  .promo__title {
+    margin-bottom: 40px;
+    color: #000000;
+    font-size: 60px;
+    line-height: 60px;
+    text-align: left;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .promo__title {
+    width: 470px;
+  }
+}
+
+.promo__slogan {
+  margin: 0;
+  color: #ffffff;
+  font-family: $font-special;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 14px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+@media (min-width: $tablet-width) {
+  .promo__slogan {
+    color: #000000;
+    font-size: 20px;
+    line-height: 20px;
+    text-align: left;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .promo__slogan {
+    width: 470px;
+  }
+}
+
+.promo__button {
+  width: 87.5%;
+  max-width: 400px;
+  align-self: center;
+  padding-top: 11px;
+  padding-bottom: 11px;
+  font-size: 14px;
+  line-height: 18px;
+}
+
+@media (min-width: $tablet-width) {
+  .promo__button {
+    width: 244px;
+    align-self: auto;
+    padding-top: 17px;
+    padding-bottom: 17px;
+    font-size: 20px;
+    line-height: 1;
+  }
+}

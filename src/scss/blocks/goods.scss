@@ -1,0 +1,125 @@
+.goods {
+  @include reset-list;
+  border-top: 1px solid $special-light;
+}
+
+@media (min-width: $desktop-width) {
+  .goods {
+    width: 896px;
+  }
+}
+
+.goods__item {
+  padding-top: 13px;
+  padding-bottom: 18px;
+  border-bottom: 1px solid $special-light;
+}
+
+@media (min-width: $tablet-width) {
+  .goods__item {
+    padding: 26px 37px 28px;
+    border-right: 1px solid $special-light;
+    border-left: 1px solid $special-light;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .goods__item {
+    display: flex;
+    align-items: baseline;
+    padding: 15px 0 16px;
+    border-right: 0;
+    border-left: 0;
+  }
+}
+
+@media (min-width: $tablet-width) {
+  .goods__container {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .goods__container {
+    margin-right: 38px;
+    margin-bottom: 0;
+  }
+}
+
+.goods__title {
+  margin: 0;
+  color: $special-darker;
+  font-family: $font-special;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+@media (min-width: $tablet-width) {
+  .goods__title {
+    font-size: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .goods__title {
+    width: 300px;
+    margin-right: 24px;
+  }
+}
+
+.goods__inner {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 13px;
+  margin-bottom: 15px;
+  font-size: 14px;
+  line-height: 1;
+}
+
+@media (min-width: $tablet-width) {
+  .goods__inner {
+    margin: 0;
+    font-size: 16px;
+    line-height: 20px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .goods__inner {
+    width: 288px;
+  }
+}
+
+.goods__quantity {
+  margin-right: 20px;
+}
+
+@media (min-width: $tablet-width) {
+  .goods__quantity {
+    margin-right: 49px;
+  }
+}
+
+@media (min-width: $desktop-width) {
+  .goods__quantity {
+    width: 200px;
+    margin-right: 20px;
+  }
+}
+
+
+.goods__button {
+  display: block;
+}
+
+@media (min-width: $desktop-width) {
+  .goods__button {
+    width: 244px;
+  }
+}
+
