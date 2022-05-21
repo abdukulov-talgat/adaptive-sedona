@@ -2,8 +2,11 @@ extends ../layout.pug
 
 
 block variables
-  - let pageTitle = 'HELLO PUG'
+  -
+    let pageTitle = 'HELLO PUG'
+    let activeHref = 'index.html'
 
 
 block content
-  main
+  main.content
+    p some text

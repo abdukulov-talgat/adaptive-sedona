@@ -20,7 +20,11 @@ function html() {
         //         isDev: app.isDev
         //     }
         // }))
-        .pipe(pug())
+        .pipe(pug({
+            locals: {
+                isDev: app.isDev
+            }
+        }))
         .pipe(replace(/@img\//g, 'img/'))
         // .pipe(replace(
         //     /(@scss\/).*(\.scss)/g,

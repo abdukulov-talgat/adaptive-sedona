@@ -1,1 +1,10 @@
-h1 header
+header.header
+  a.header__logo-link(href="index.html")
+    picture
+      source(media="(min-width: 1200px)" srcset="@img/header/logo-desktop.svg")
+      source(media="(min-width: 768px)" srcset="@img/header/logo-tablet.svg")
+      img.header__logo-img(src="@img/header/logo-mobile.svg" width="102" height="84")
+
+  nav.header__nav
+    include ../mixins/menu
+    button.burger(type="button" aria-label="Show / Close Menu")

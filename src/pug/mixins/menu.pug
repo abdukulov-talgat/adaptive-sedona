@@ -1,0 +1,18 @@
+mixin menu(items)
+  ul.header__menu.menu
+    - for(let i = 0; i < items.length; i++)
+      li.menu__item
+        - let classList = activeHref === items[i].href ? 'menu__link menu__link--active' : 'menu__link'
+          a(
+            class = classList
+            href = items[i].href
+          ) #{items[i].text}
+
+
+
++menu([
+  {text: 'Главная', href:'index.html'},
+  {text: 'Фото и видео', href: 'catalog.html'},
+  {text: 'Форма Отзыва', href: 'form.html'},
+  {text: 'HTML ACADEMY', href: '#'}
+])

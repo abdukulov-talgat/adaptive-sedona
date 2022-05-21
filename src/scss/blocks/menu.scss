@@ -1,0 +1,24 @@
+.menu {
+  @include reset-list;
+}
+
+.menu__item {
+
+}
+
+.menu__link {
+  display: block;
+  padding-top: 10px;
+  padding-bottom: 5px;
+  background-color: #81b3d2;
+  color: #ffffff;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 40px;
+  text-align: center;
+  text-decoration: none;
+}
+
+.menu__link--active {
+
+}
