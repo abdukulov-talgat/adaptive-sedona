@@ -11,6 +11,7 @@ import images from './gulp/tasks/images.js';
 import svgSprite from './gulp/tasks/svgSprite.js';
 import js from './gulp/tasks/js.js';
 import deployPages from './gulp/tasks/deploy.js';
+import favicons from './gulp/tasks/favicons.js';
 
 global.app = {
     browserSync: browserSync.create(),
@@ -46,7 +47,8 @@ const mainTasks = gulp.parallel(
     style,
     images,
     svgSprite,
-    js
+    js,
+    favicons,
 );
 
 export const build = gulp.series(clean, mainTasks);

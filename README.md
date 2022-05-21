@@ -1,3 +1,3 @@
-# project-template
+# Adaptive-Sedona
 
-## Учебный проект catenergy. Адаптивный дизайн
+## Учебный проект Sedona. Адаптивный дизайн. PUG + SCSS + GULP
