@@ -1,6 +1,3 @@
-.intro {
-
-}
 
 .intro__welcome {
   position: relative;
@@ -25,6 +22,15 @@
   }
 }
 
+.intro--inner .intro__welcome {
+  min-height: 158px;
+  background-image: url("@img/header/back-desktop.jpg");
+
+  @media (min-width: $tablet-width) {
+    min-height: 290px;
+  }
+}
+
 .intro__welcome::before {
   position: absolute;
   bottom: 0;
@@ -41,6 +47,7 @@
   box-sizing: content-box;
   padding-top: 90px;
   margin: 0 auto;
+  object-fit: contain;
 
   @media (min-width: $tablet-width) {
     width: 461px;
@@ -49,8 +56,22 @@
   }
 }
 
-.intro__word {
+.intro--inner .intro__img {
+  width: 229px;
+  height: 39px;
+  padding-top: 52px;
 
+  @media (min-width: $tablet-width) {
+    width: 456.9px;
+    height: 77.6px;
+    padding-top: 95px;
+  }
+
+  @media (min-width: $desktop-width) {
+    width: 459.5px;
+    height: 79.8px;
+    padding-top: 101px;
+  }
 }
 
 .intro__text {
@@ -78,6 +99,13 @@
 
   @media (min-width: $tablet-width) {
     font-size: 21px;
+  }
+}
+
+.intro--inner .intro__title {
+  @media (min-width: $tablet-width) {
+    font-size: 30px;
+    line-height: 30px;
   }
 }
 

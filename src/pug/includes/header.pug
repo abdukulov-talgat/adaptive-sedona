@@ -9,9 +9,14 @@ header.header
     include ../mixins/menu
     button.burger(type="button" aria-label="Show / Close Menu")
 
-  .intro
+
+  -const classList = activeHref === 'index.html' ? 'intro' : 'intro intro--inner'
+  div(class=`${classList}`)
     .intro__welcome
-      include ../../img/header/text-index.svg
+      -if(activeHref === 'index.html')
+        img.intro__img(src="@img/header/text-index.svg" width="280px" height="214")
+      -else
+        img.intro__img(src="@img/header/text-inner.svg" width="229" header="39")
     .intro__text
       .intro__container
         h1.intro__title Седона — небольшой #[br.before-tablet] городок в Аризоне,#[br.after-tablet] заслуживающий большего!
