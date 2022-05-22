@@ -1,9 +1,16 @@
 .menu {
   @include reset-list;
-}
+  display: grid;
 
-.menu__item {
+  @media (min-width: $tablet-width) {
+    grid-template-columns: 19.92% 19.92% 1fr 19.92% 19.92%;
 
+    &::before {
+      content: "";
+      grid-column: 3 / 4;
+      grid-row: 1 / -1;
+    }
+  }
 }
 
 .menu__link {
@@ -15,10 +22,57 @@
   font-size: 18px;
   font-weight: 700;
   line-height: 40px;
+  outline: 0;
   text-align: center;
   text-decoration: none;
-}
 
-.menu__link--active {
+  .menu__item:not(:first-child) & {
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
 
+    @media (min-width: $tablet-width) {
+      box-shadow: 0;
+    }
+  }
+
+  .menu__item:not(:last-child) & {
+    border-bottom: 1px solid rgba(1, 1, 1, 0.2);
+
+    @media (min-width: $tablet-width) {
+      border-bottom: 0;
+    }
+  }
+
+  &:hover,
+  &:focus {
+    background-color: #669ec0;
+  }
+
+  &:active {
+    background-color: #5496bd;
+    color: rgba(#ffffff, 0.3);
+  }
+
+
+  @media (min-width: $tablet-width) {
+    padding: 16px 16px 14px;
+    background-color: transparent;
+    color: #000000;
+    font-size: 14px;
+    line-height: 26px;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
+      color: #81b3d2;
+    }
+
+    &:active {
+      background-color: transparent;
+      color: rgba(#000000, 0.3);
+    }
+
+    &--active {
+      color: #766357;
+    }
+  }
 }

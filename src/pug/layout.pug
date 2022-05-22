@@ -1,7 +1,7 @@
 block variables
 
 doctype html
-html(lang="ru")
+html.no-js(lang="ru")
   head
     meta(charset="UTF-8")
     title #{pageTitle}
@@ -15,6 +15,7 @@ html(lang="ru")
     -if(isDev)
       include pixel-glass
   body
+
   .wrapper
     block header
       include ./includes/header
@@ -23,3 +24,6 @@ html(lang="ru")
 
     block footer
       include ./includes/footer
+
+  block scripts
+    script(src="js/app.min.js")

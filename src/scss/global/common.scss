@@ -13,6 +13,7 @@ body {
   min-width: $mobile-width;
   height: 100%;
   margin: 0;
+  background-color: #f2f2f2;
   color: $color-primary;
   font-family: $font-basic;
   font-size: 14px;
@@ -24,11 +25,86 @@ body {
 .wrapper {
   display: flex;
   max-width: $desktop-width;
-  height: 100%;
+  min-height: 100%;
   flex-direction: column;
   margin: 0 auto;
+  background-color: #ffffff;
+  box-shadow: 0 5px 15px rgba(0, 1, 1, 0.2);
 }
 
 .content {
   flex: 1 0 auto;
+}
+
+
+.burger {
+  position: absolute;
+  z-index: 3;
+  top: 12px;
+  right: 16px;
+  width: 32px;
+  height: 32px;
+  padding: 0;
+  border: 0;
+  background-color: transparent;
+  cursor: pointer;
+  outline: 0;
+
+  &::before {
+    display: block;
+    width: 23px;
+    height: 4px;
+    margin: 0 auto;
+    background-color: #81b3d2;
+    box-shadow:
+      0 -9px 0 0 #81b3d2,
+      0 9px 0 0 #81b3d2;
+    content: "";
+  }
+
+  &:hover,
+  &:focus {
+    opacity: 0.6;
+  }
+
+  &:active {
+    opacity: 0.3;
+  }
+
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.burger--opened {
+  &::before,
+  &::after {
+    position: absolute;
+    left: 50%;
+    width: 28px;
+    height: 4px;
+    margin-left: -14px;
+    background-color: #ffffff;
+    box-shadow: none;
+    content: "";
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.before-tablet {
+  @media (min-width: $tablet-width) {
+    display: none;
+  }
+}
+
+.after-tablet {
+  display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+  }
 }
