@@ -108,3 +108,15 @@ body {
     display: block;
   }
 }
+
+.page__reasons {
+  margin-top: 11px;
+
+  @media (min-width: $tablet-width) {
+    margin-top: 54px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 43px;
+  }
+}
