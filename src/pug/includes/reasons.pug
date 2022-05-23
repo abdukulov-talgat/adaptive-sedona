@@ -1,0 +1,63 @@
+-let count = 0;
+
+mixin box(title, text)
+  .reasons__box
+    h3.reasons__title!= title
+    span.reasons__num — №#{++count} —
+    p.reasons__text= text
+
+mixin img(mobile, mobileSet, tabletSet, desktopSet, alt)
+  .reasons__img-box
+    picture
+      source(media="(min-width: 1200px)" srcset=desktopSet)
+      source(media="(min-width: 768px)" srcset=tabletSet)
+      img.reasons__img(src=mobile srcset=mobileSet alt=alt)
+
+mixin subitem(mod, title, text)
+  li.reasons__subitem(class=attributes.class)
+    .reasons__subbox(class=`reasons__subbox--${mod}`)
+      h4.reasons__subtitle= title
+      p.reasons__subtext= text
+
+
+section.reasons.page__reasons
+  h2.visually-hidden Почему Седона круче
+
+  ul.reasons__list
+    li.reasons__item
+      .reasons__container
+        +box("Настоящий <br class=\"after-tablet\"> городок", "Седона не аттракцион для туристов, там течет своя жизнь")
+        +img(
+          "@img/reasons/photo-city-mobile.jpg",
+          "@img/reasons/photo-city-mobile@2x.jpg 2x",
+          "@img/reasons/photo-city-tablet.jpg 1x, @img/reasons/photo-city-tablet@2x.jpg 2x",
+          "@img/reasons/photo-city-desktop.jpg 1x, @img/reasons/photo-city-desktop@2x.jpg 2x",
+          "Городок Седона"
+        )
+      ul.reasons__sublist
+        +subitem("house", "Жилье", "Рекомендуем пожить в настоящем мотеле, все как в кино!")
+        +subitem("gift", "Сувениры", "Не только китайского, но и местного производства!")(class="reasons__subitem--third")
+        +subitem("burger", "Еда", "Всегда заказывайте ФИРМЕННЫЙ БУРГЕР, Вы НЕ разочаруетесь!")
+    li.reasons__item
+      .reasons__container.reasons__container--reverse
+        +box("ТАМ ЕСТЬ <br class=\"after-tablet\"> Мост дьявола", "Да, по нему можно пройти! Если вы осмелитесь, конечно")
+        +img(
+          "@img/reasons/photo-bridge-mobile.jpg",
+          "@img/reasons/photo-bridge-mobile@2x.jpg 2x",
+          "@img/reasons/photo-bridge-tablet.jpg 1x, @img/reasons/photo-bridge-tablet@2x.jpg 2x",
+          "@img/reasons/photo-bridge-desktop.jpg 1x, @img/reasons/photo-bridge-desktop@2x.jpg 2x",
+          "Мост дьявола"
+        )
+    li.reasons__item.reasons__item--narrow
+      +box("НЕБОЛЬШАЯ <br class=\"after-tablet\"> ПЛОЩАДЬ", "ВСЕ интересные места находятся очень близко")
+    li.reasons__item.reasons__item--narrow
+      +box("КРАСИВАЯ <br class=\"after-tablet\"> ДОРОГА", "ЕХАТЬ В СЕДОНУ ИЗ ЛАС-ВЕГАСА совсем НЕ СКУЧНО!")
+    li.reasons__item.reasons__item--narrow
+      +box("МАЛО <br class=\"after-tablet\"> ТУРИСТОВ", "Большинство едет в гранд каньон и толпится там")
+
+
+
+
+
+
+
