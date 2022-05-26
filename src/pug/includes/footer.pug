@@ -1,2 +1,20 @@
+mixin socialLink(mod, ariaSpan, href)
+  li
+    a.social__link(class=`social__link--${mod}` href=href)
+      span.visually-hidden #{ariaSpan}
+
+
+
 footer.footer
-  h1 footer inc
+  div.footer__hashtag #visitSEDONA
+
+  ul.footer__social.social
+    +socialLink("twitter", "Мы в твиттере", "#")
+    +socialLink("facebook", "Мы в фейсбуке", "#")
+    +socialLink("youtube", "Мы на ютуб", "#")
+
+  .footer__author
+    span.footer__author-text Разработано
+    a.footer__author-link(href="#")
+      svg(width="27" height="35")
+        use(xlink:href="@img/icons/icons.svg#htmlacademy")
