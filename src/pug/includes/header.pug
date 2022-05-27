@@ -19,5 +19,5 @@ header.header
         img.intro__img(src="@img/header/text-inner.svg" width="229" header="39")
     .intro__text
       .intro__container
-        h1.intro__title Седона — небольшой #[br.before-tablet] городок в Аризоне,#[br.after-tablet] заслуживающий большего!
-        p.intro__description Рассмотрим 5 причин, по которым Седона круче, чем гранд каньон!
+        h1.intro__title!= introTitle
+        p.intro__description= introText
