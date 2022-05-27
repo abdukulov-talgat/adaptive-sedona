@@ -3,3 +3,25 @@
   margin: 0;
   list-style-type: none;
 }
+
+@mixin inputStates {
+  outline-offset: -4px;
+
+  &:hover {
+    background-color: #e5e5e5;
+  }
+
+  &:focus {
+    background-color: transparent;
+    outline: 4px solid #e5e5e5;
+  }
+
+  &:focus::placeholder {
+    color: rgba(#000000, 0.5);
+  }
+
+  &--error,
+  &--error:focus {
+    outline: 4px solid  rgb(241, 70, 70);
+  }
+}

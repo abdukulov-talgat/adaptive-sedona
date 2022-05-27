@@ -1,11 +1,92 @@
 extends ../layout.pug
 
-
 block variables
   -
     const pageTitle = 'Оставьте свой отзыв'
     const activeHref = 'form.html'
+     const introTitle = 'Оставьте свой отзыв';
+    const introText = 'Помогите нашим отелям стать лучше! оставьте отзыв о них, а также о посещенных вами достопримечательностях';
 
 
 block content
   main.content
+    section.feedback
+      h2.visually-hidden Форма обратной связи
+
+      form.feedback__form(action="https://echo.htmlacademy.ru" methog="post")
+        fieldset.feedback__fieldset
+          legend.feedback__legend Представьтесь:
+          div.feedback__inner
+            +simpleControl("ИМЯ*:", "text")(placeholder="Петр" name="name" required)
+            +simpleControl("ФАМИЛИЯ*:", "text")(placeholder="Иванов" name="surname" required)
+            +simpleControl("Отчество:", "text")(placeholder="Александрович" name="patronymic")
+
+        fieldset.feedback__fieldset
+          legend.feedback__legend Контактная информация:
+          div.feedback__inner
+            +iconControl("Контактный телефон*:", "tel", "phone")(placeholder="Введите телефон" name="phone" required)
+            +iconControl("Электронная почта*:", "email", "email")(placeholder="Введите e-mail" name="email" required)
+
+        fieldset.feedback__fieldset
+          legend.feedback__legend ВАше Общее впечатление:
+          div.feedback__inner
+            +radioControl("Скорее положительное", "impression", "positive")(checked)
+            +radioControl("Скорее отрицательное", "impression", "negative")
+            +radioControl("Затрудняюсь ответить", "impression", "unknown")
+
+        fieldset.feedback__fieldset
+          legend.feedback__legend посещенные достопримечательности:
+          div.feedback__inner
+            +checkControl("Мост Дьявола", "bridge")(checked)
+            +checkControl("Гора-Колокол", "mountain")(checked)
+            +checkControl("Слайд-парк", "park")(checked)
+            +checkControl("Красные скалы", "red-rocks")
+
+        fieldset.feedback__fieldset
+          legend.feedback__legend Опишите свои эмоции:
+          div.feedback__inner
+            textarea.feedback__area(placeholder="Опишите подробно все свои восторги" name="comment")
+
+        div.feedback__inner
+          div.feedback__container
+            button.button.feedback__submit(type="submit") ОТПРАВИТЬ ОТЗЫВ
+            p.feedback__hint * — обязательные поля
+
+
+
+mixin simpleControl(text, type)
+  label.simple-control.feedback__simple-control
+    span.simple-control__text= text
+    input.simpe-control__input(
+      type = type
+    )&attributes(attributes)
+
+
+mixin iconControl(text, type, icon)
+  label.icon-control.feedback__icon-control
+    span.icon-control__text= text
+    span.icon-control__box(class=`icon-control__box--${icon}`)
+      input.icon-control__input(
+        type = type
+      )&attributes(attributes)
+
+
+mixin radioControl(text, name, value)
+  label.radio-control.feedback__radio-control
+    input.radio-control__input.visually-hidden(
+      type="radio"
+      name=name
+      value=value
+    )&attributes(attributes)
+    span.radio-control__mark
+    span.radio-control__text= text
+
+
+mixin checkControl(text, name)
+  label.check-control.feedback__check-control
+    input.check-control__input.visually-hidden(
+      type="checkbox"
+      name=name
+    )&attributes(attributes)
+    span.check-control__mark
+    span.check-control__text= text
