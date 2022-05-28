@@ -1,9 +1,20 @@
 .feedback {
   margin-top: 17px;
+
+  @media (min-width: $tablet-width) {
+    padding: 0 7.81%;
+    margin-top: 0;
+  }
 }
 
 .feedback__form {
   border-top: 1px solid #e5e5e5;
+
+  @media (min-width: $tablet-width) {
+    display: flex;
+    flex-wrap: wrap;
+    border-top: 0;
+  }
 }
 
 .feedback__fieldset {
@@ -22,6 +33,18 @@
     background-color: #e5e5e5;
     content: "";
   }
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+    order: 3;
+    padding-bottom: 0;
+    border-top: 1px solid #dbdbdb;
+    margin-top: 72px;
+
+    &::after {
+      content: none;
+    }
+  }
 }
 
 .feedback__fieldset:last-of-type {
@@ -32,6 +55,36 @@
   }
 }
 
+.feedback__fieldset--narrow {
+  @media (min-width: $tablet-width) {
+    width: 50%;
+    border-top: 0;
+    margin-top: 66px;
+
+    .feedback__legend {
+      width: auto;
+      padding-top: 0.5em;  // По умолчанию рамка идет по центру через центр надписи. Для компенсации (не работает корректно при многострочности)
+      margin-bottom: 45px; // Вариант через абсолютный псевдоелемент тоже не подходит. Т.к. он считает что legend "снаружи"
+      text-align: left;
+    }
+  }
+}
+
+.feedback__fieldset--narrow-left {
+  @media (min-width: $tablet-width) {
+    order: 1;
+    padding-right: 50px;
+    border-right: 1px solid #dbdbdb;
+  }
+}
+
+.feedback__fieldset--narrow-right {
+  @media (min-width: $tablet-width) {
+    order: 2;
+    padding-left: 58px;
+  }
+}
+
 .feedback__legend {
   padding: 20px 0;
   color: #000000;
@@ -39,10 +92,36 @@
   font-weight: 700;
   line-height: 26px;
   text-align: center;
+
+  @media (min-width: $tablet-width) {
+    position: relative;
+    width: 402px;
+    padding: 0;
+    margin-bottom: 50px;
+    font-size: 21px;
+    line-height: 26px;
+
+    &--contacts {
+      margin-bottom: 20px;
+    }
+  }
 }
 
 .feedback__inner {
   padding: 0 6.25%;
+
+  @media (min-width: $tablet-width) {
+    padding: 0;
+  }
+}
+
+.feedback__checkboxes {
+  @media (min-width: $tablet-width) {
+    display: grid;
+    margin-left: 95px;
+    gap: 32px;
+    grid-template-columns: 226px 226px;
+  }
 }
 
 .feedback__simple-control:not(:last-child) {
@@ -51,14 +130,35 @@
 
 .feedback__icon-control:not(:last-child) {
   margin-bottom: 14px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 25px;
+  }
 }
 
 .feedback__radio-control:not(:last-child) {
   margin-bottom: 11px;
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 20px;
+  }
+}
+
+.feedback__check-control {
+  @media (min-width: $tablet-width) {
+    &:nth-child(2n+1) {
+
+    }
+  }
 }
 
 .feedback__check-control:not(:last-child) {
   margin-bottom: 24px;
+
+
+  @media (min-width: $tablet-width) {
+    margin-bottom: 0;
+  }
 }
 
 .feedback__area {
@@ -85,15 +185,35 @@
 .feedback__container {
   display: flex;
   flex-direction: column;
+  padding: 0 6.25%;
   margin-bottom: 37px;
+
+  @media (min-width: $tablet-width) {
+    width: 100%;
+    flex-direction: row;
+    align-items: center;
+    justify-content: space-between;
+    order: 4;
+    padding: 0;
+    margin-bottom: 50px;
+  }
 }
 
 .feedback__submit {
-
+  @media (min-width: $tablet-width) {
+    width: 324px;
+    flex-shrink: 0;
+  }
 }
 
 .feedback__hint {
   display: none;
+
+  @media (min-width: $tablet-width) {
+    display: block;
+    margin: 0;
+    margin-left: 30px;
+  }
 }
 
 

@@ -14,7 +14,7 @@ block content
       h2.visually-hidden Форма обратной связи
 
       form.feedback__form(action="https://echo.htmlacademy.ru" methog="post")
-        fieldset.feedback__fieldset
+        fieldset.feedback__fieldset.feedback__fieldset--narrow.feedback__fieldset--narrow-right
           legend.feedback__legend Представьтесь:
           div.feedback__inner
             +simpleControl("ИМЯ*:", "text")(placeholder="Петр" name="name" required)
@@ -22,12 +22,12 @@ block content
             +simpleControl("Отчество:", "text")(placeholder="Александрович" name="patronymic")
 
         fieldset.feedback__fieldset
-          legend.feedback__legend Контактная информация:
+          legend.feedback__legend.feedback__legend--contacts Контактная информация:
           div.feedback__inner
             +iconControl("Контактный телефон*:", "tel", "phone")(placeholder="Введите телефон" name="phone" required)
             +iconControl("Электронная почта*:", "email", "email")(placeholder="Введите e-mail" name="email" required)
 
-        fieldset.feedback__fieldset
+        fieldset.feedback__fieldset.feedback__fieldset--narrow.feedback__fieldset--narrow-left
           legend.feedback__legend ВАше Общее впечатление:
           div.feedback__inner
             +radioControl("Скорее положительное", "impression", "positive")(checked)
@@ -37,20 +37,20 @@ block content
         fieldset.feedback__fieldset
           legend.feedback__legend посещенные достопримечательности:
           div.feedback__inner
-            +checkControl("Мост Дьявола", "bridge")(checked)
-            +checkControl("Гора-Колокол", "mountain")(checked)
-            +checkControl("Слайд-парк", "park")(checked)
-            +checkControl("Красные скалы", "red-rocks")
+            div.feedback__checkboxes
+              +checkControl("Мост Дьявола", "bridge")(checked)
+              +checkControl("Гора-Колокол", "mountain")(checked)
+              +checkControl("Слайд-парк", "park")(checked)
+              +checkControl("Красные скалы", "red-rocks")
 
         fieldset.feedback__fieldset
           legend.feedback__legend Опишите свои эмоции:
           div.feedback__inner
             textarea.feedback__area(placeholder="Опишите подробно все свои восторги" name="comment")
 
-        div.feedback__inner
-          div.feedback__container
-            button.button.feedback__submit(type="submit") ОТПРАВИТЬ ОТЗЫВ
-            p.feedback__hint * — обязательные поля
+        div.feedback__container
+          button.button.feedback__submit(type="submit") ОТПРАВИТЬ ОТЗЫВ
+          p.feedback__hint * — обязательные поля
 
 
 
