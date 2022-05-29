@@ -21,10 +21,10 @@ block content
             +simpleControl("ФАМИЛИЯ*:", "text")(placeholder="Иванов" name="surname" required)
             +simpleControl("Отчество:", "text")(placeholder="Александрович" name="patronymic")
 
-        fieldset.feedback__fieldset
+        fieldset.feedback__fieldset.feedback__fieldset--contacts
           legend.feedback__legend.feedback__legend--contacts Контактная информация:
           div.feedback__inner
-            +iconControl("Контактный телефон*:", "tel", "phone")(placeholder="Введите телефон" name="phone" required)
+            +iconControl("<span class=\"before-desktop\">Контактный</span> телефон*:", "tel", "phone")(placeholder="Введите телефон" name="phone" required)
             +iconControl("Электронная почта*:", "email", "email")(placeholder="Введите e-mail" name="email" required)
 
         fieldset.feedback__fieldset.feedback__fieldset--narrow.feedback__fieldset--narrow-left
@@ -64,7 +64,7 @@ mixin simpleControl(text, type)
 
 mixin iconControl(text, type, icon)
   label.icon-control.feedback__icon-control
-    span.icon-control__text= text
+    span.icon-control__text!= text
     span.icon-control__box(class=`icon-control__box--${icon}`)
       input.icon-control__input(
         type = type

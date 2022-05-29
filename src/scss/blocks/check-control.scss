@@ -1,0 +1,45 @@
+.check-control {
+  display: flex;
+  align-items: center;
+}
+
+.check-control__mark {
+  position: relative;
+  width: 56px;
+  height: 56px;
+  flex-shrink: 0;
+  border: 5px solid #f2f2f2;
+  margin-right: 24px;
+  background-color: #f2f2f2;
+
+  &:hover,
+  input:focus + & {
+    border-color: #e5e5e5;
+    background-color: #e5e5e5;
+  }
+
+  input + &:active {
+    border-color: #d5d5d5;
+    background-color: #d5d5d5;
+  }
+
+  input:checked + &::before {
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url("@img/icons/icons.svg#tick") no-repeat center / 24px 17px;
+    content: "";
+  }
+
+  input:checked + &:active::before {
+    opacity: 0.3;
+  }
+}
+
+.check-control__text {
+  color: #000000;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  text-transform: none;
+}

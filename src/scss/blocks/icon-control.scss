@@ -1,0 +1,71 @@
+.icon-control {
+  display: flex;
+  flex-direction: column;
+
+  @media (min-width: $desktop-width) {
+    flex-direction: row;
+    align-items: center;
+  }
+}
+
+.icon-control__text {
+  padding-left: 22px;
+
+  @media (min-width: $desktop-width) {
+    padding-left: 0;
+    margin-right: 17px;
+  }
+}
+
+
+.icon-control__box {
+  position: relative;
+  flex-grow: 1;
+  padding-right: 58px;
+  margin-top: 8px;
+
+  &::before {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 58px;
+    height: 58px;
+    background-color: #e6e6e6;
+    background-position: center;
+    background-repeat: no-repeat;
+    content: "";
+  }
+
+  &--phone::before {
+    background-image: url("@img/icons/icons.svg#phone");
+    background-size: 18px 18px;
+  }
+
+  &--email::before {
+    background-image: url("@img/icons/icons.svg#email");
+    background-size: 16px 12px;
+  }
+
+  @media (min-width: $desktop-width) {
+    margin-top: 0;
+  }
+}
+
+.icon-control__input {
+  width: 100%;
+  padding: 18px 22px 14px;
+  border: 0;
+  background-color: #f2f2f2;
+  color: #000000;
+  font-family: inherit;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 26px;
+  outline: 0;
+
+  &::placeholder {
+    color: #000000;
+  }
+
+  @include inputStates;
+}
