@@ -14,16 +14,30 @@ html.no-js(lang="ru")
     link(rel="manifest" href="manifest.webmanifest")
     -if(isDev)
       include pixel-glass
+
+
   body
+    .wrapper
+      block header
+        include ./includes/header
 
-  .wrapper
-    block header
-      include ./includes/header
+      block content
 
-    block content
+      block footer
+        include ./includes/footer
 
-    block footer
-      include ./includes/footer
+    block scripts
+      script(src="js/app.min.js")
 
-  block scripts
-    script(src="js/app.min.js")
+    .modal-overlay(style="display: none")
+
+    //- .modal.modal--error
+    //-   b.modal__title ЧТО-ТО ПОШЛО #[br.after-tablet] НЕ ТАК!
+    //-   p.modal__message Проверьте поля, выделенные красным, скорее всего вы забыли их заполнить
+    //-   button.modal__button.button(type="button") OK
+
+    .modal.modal--success
+      b.modal__title Ваш отзыв отправлен!
+      p.modal__message Спасибо за ваше участие, ваш отзыв уже поступил к нам. В ближайшее время мы опубликуем его на сайте.
+      .modal__bg
+        button.modal__button.button(type="button") OK

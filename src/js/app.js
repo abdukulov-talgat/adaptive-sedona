@@ -8,6 +8,8 @@ burger.addEventListener('click', () => {
     menu.classList.toggle('header__menu--opened')
 });
 
+
+
 // **************** Google Maps ****************
 import { Loader } from '@googlemaps/js-api-loader';
 
@@ -33,3 +35,5 @@ loader.load().then(() => {
         icon: icon
     });
 });
+
+

@@ -100,10 +100,12 @@
 }
 
 .feedback__fieldset--contacts {
-  .feedback__inner {
-    display: grid;
-    gap: 40px 80px;
-    grid-template-columns: 400px 480px;
+  @media (min-width: $desktop-width) {
+    .feedback__inner {
+      display: grid;
+      gap: 40px 80px;
+      grid-template-columns: 400px 480px;
+    }
   }
 }
 
@@ -176,14 +178,6 @@
 
   @media (min-width: $tablet-width) {
     margin-bottom: 20px;
-  }
-}
-
-.feedback__check-control {
-  @media (min-width: $tablet-width) {
-    &:nth-child(2n+1) {
-
-    }
   }
 }
 
